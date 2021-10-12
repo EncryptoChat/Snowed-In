@@ -43,4 +43,6 @@ ActiveRecord::Schema.define(version: 2021_09_07_193900) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "room_messages", "rooms"
+  add_foreign_key "room_messages", "users"
 end
