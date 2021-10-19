@@ -6,8 +6,8 @@ class RoomMessagesController < ApplicationController
                                        room: @room,
                                        message: params.dig(:room_message, :message)
     
-    ActionCable.server.broadcast("room_My Room", {body: @room_message})
-    #RoomChannel.broadcast_to("room_My Room", @room_message)
+    SendMessageJob.perform_later(@room_message)
+    
   end
 
   protected
