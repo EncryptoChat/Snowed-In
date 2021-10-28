@@ -1,10 +1,10 @@
-# Snowed-In: Encrypted Chat Channels
+# ❄ ❄ ❄ Snowed-In: Encrypted Chat Channels ❄ ❄ ❄
 
-## 📖 About Snowed-In:
+## 📖      About Snowed-In:
 
 ### ⭐ Authors:
 
-Name              | Username(GitHub) | Roles
+Name              | Username(GitHub) | Role(s)
 ----------------- | -----------------|------------------------
 Connor Drummond   | cdrummo          | Scrum Master, Developer
 TJ Virbick        | TjVirb           | Product Owner, Developer
@@ -14,11 +14,13 @@ TJ Virbick        | TjVirb           | Product Owner, Developer
 Snowed-In is a project created by two college student's for their CS-4360: Technical Software Project.
 The project was inspired by Edward Snowden a former computer intelligence consultant who leaked highly 
 classified information from the National Security Agency in 2013. The effect of Edward Snowden's actions, 
-has caused a lot of people world wide to look for better means of securing personal data and keeping things private.  
+has caused a lot of people world wide to look for better means of securing personal data and keeping their 
+information private.  
 
-With this project we seek to find better way of communicating through secure and encrypted channels. We set out to 
-create chat rooms that would automatically encrypt and decrypt as the messages are sent and received. We built and
-developed the Web Application through Ruby on Rails, using Websockets and gems to help secure data and promote privacy.
+With this project we seek to find a better way of communicating through secure and encrypted channels. We set out to 
+create chat rooms that would automatically encrypt and decrypt information as the messages are sent and received. 
+We built and developed this Web Application through Ruby on Rails, using Websockets and gems to help secure data and 
+promote privacy.
 
 ### 🏗️ Project Structure and Design:
 
@@ -31,7 +33,7 @@ keep things consistent.
 When we started the project our definition of done for this project was to set up a Web Application that would allow
 users (2 or more) to chat. We wanted to reach a minimum of 90% test coverage (aim high) by the end of the project.
 
-####Our Design Structure:
+#### Our Design Structure:
 We decided on using an MVC design structure before we decided on a language. So using Ruby on Rails which automatically
 uses MVC was just a nice treat. 
 
@@ -41,15 +43,21 @@ uses MVC was just a nice treat.
 
 Dependency   | Version
 ------------ | -------------
-Ruby         | 2.7.4
+Ruby         | [2.7.4](https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.4.zip)
 Rails        | 6.1.4.1
 Node         | 14.17.6
 
 ### 🏃‍ Running the Application:
 
-#### 1. Make sure all Dependencies are met:
-Dependencies are listed above. Please make sure the correct versions are installed.
+#### 1. Installing Ruby and rails:
+Please check table above for link to download appropriate Ruby version. If Ruby is installed already, please make sure
+version is correct this can be checked using the command on the command line or power shell: 
 
+    ruby --version
+
+After installing ruby use the command line or power shell to run:
+
+    ruby install rails -v 6.1.4.1
 #### 2. Downloading appropriate libraries:
 As long as correct versions of Ruby and Rails are installed. You should be able to use the bundler to install all the
 required gems. To do so, use the command line to navigate to the project directory and then run the command:
