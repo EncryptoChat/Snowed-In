@@ -2,8 +2,18 @@
   <%= @room.name %>
 </h1>
 
+<br>
+
 <div class="row">
   <div class="col-12 col-md-3">
+    <div class="mb-3">
+      <%= link_to new_room_path, class: 'btn btn-success' do %>
+        Create a room
+      <%end%>
+      <%= link_to edit_room_path(@room), class: 'btn btn-warning' do %>
+        Edit Room
+      <% end %>
+    </div>
     <%= render partial: 'rooms' %>
   </div>
 
@@ -12,7 +22,7 @@
       <% @room_messages.each do |room_message| %>
         <div class="chat-message-container">
           <div class="row px-1">
-            <div class="col-3 text-left">
+            <div class="col-1 text-left">
               <%= room_message.user.username %>:
             </div>
 
@@ -39,6 +49,7 @@
         <%= form.input :message, as: :text,
                        wrapper: false,
                        label: false,
+                       autofocus: true,
                        input_html: { class: 'chat-input' } %>
         <div class="input-group-append">
           <%= form.submit "Send", class: 'btn btn-primary chat-input' %>

@@ -1,20 +1,25 @@
-<h1>Encrypted Channels:</h1>
+<h1>Encrypted Channels List:</h1>
 
 <br>
 
 <div class="row">
   <div class="col-12 col-md-3">
+    <div class="mb-3">
+      <%= link_to new_room_path, class: 'btn btn-success' do %>
+        Create Channel
+      <%end%>
+    </div>
     <%= render partial: 'rooms' %>
   </div>
 
   <div class="col">
-    <div class="alert alert-dark" style="background-color: #b8f3ff;">
+    <div class="alert alert-dark" style="background-color: lightskyblue">
       <h4 class="alert-heading">
         Welcome
         <%= current_user.username %>,
         to the Snowed-In: Channels!
       </h4>
-      <hr />
+      <hr>
       <p>
         You can create or join a channel from the sidebar.
       </p>
