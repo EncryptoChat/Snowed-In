@@ -1,4 +1,4 @@
-# ❄❄❄ Snowed-In: Encrypted Chat Channels ❄❄❄
+# ❄❄❄Snowed-In: Encrypted Chat Channels❄❄❄
 
 ## 📖      About Snowed-In:
 
