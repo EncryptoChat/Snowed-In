@@ -1,14 +1,17 @@
-<h1>
-  Editing room <%= @room.name %>
-</h1>
-<%= simple_form_for @room, html: { autocomplete: 'off' } do |form| %>
-  <%= form.input :name %>
-  <%= form.submit "Update Channel", class: 'btn btn-success' %>
+<div class = "container my-4">
+  <h1>
+    Editing room <%= @room.name %>
+  </h1>
 
-  <%= link_to @room,
-              method: :delete,
-              data: { confirm: 'Are you sure?' },
-              class: 'btn btn-danger' do %>
-    Destroy Channel
-  <%end%>
-<% end %>
+  <%= simple_form_for @room, html: { autocomplete: 'off' } do |form| %>
+    <%= form.input :name %>
+    <%= form.submit "Update Channel", class: 'btn btn-success' %>
+
+    <%= link_to @room,
+                method: :delete,
+                data: { confirm: 'Are you sure?' },
+                class: 'btn btn-danger' do %>
+      Destroy Channel
+    <%end%>
+  <% end %>
+</div>
