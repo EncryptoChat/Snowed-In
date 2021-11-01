@@ -4,10 +4,10 @@
 
 ### ⭐ Authors:
 
-Name              | Username(GitHub) | Role(s)
------------------ | -----------------|------------------------
-TJ Virbick        | TjVirb           | Product Owner, Developer
-Connor Drummond   | cdrummo          | Scrum Master, Developer
+Name              | Role(s)                  | Username(GitHub)
+----------------- |--------------------------|------------------
+TJ Virbick        | Product Owner, Developer | TjVirb
+Connor Drummond   | Scrum Master, Developer  | cdrummo
 
 
 ### 💭 The Idea Behind the Project:
@@ -42,9 +42,9 @@ uses MVC was just a nice treat.
 
 ### ⚠️ Dependencies:
 
-Dependency   | Version      |Download
+Dependency   | Version      |Installation
 ------------ | -------------|-----------
-Ruby         | 2.7.4        |[📥Download](https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.4.zip)
+Ruby         | 2.7.4        |[📥 Download](https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.4.zip)
 Rails        | 6.1.4.1      |[Step 1](https://github.com/EncryptoChat/Snowed-In-V1.2/tree/Development#1-installing-ruby-and-rails)
 Node         | 14.17.6      |[Step 3](https://github.com/EncryptoChat/Snowed-In-V1.2/tree/Development#3-installing-nodejs)
 
