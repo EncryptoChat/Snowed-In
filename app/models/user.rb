@@ -6,8 +6,8 @@ class User < ApplicationRecord
          :validatable
 
   validates :username,
-            uniqueness: true,
             presence: true,
+            uniqueness: true,
             length: { minimum: 2, maximum: 16 },
             format: { with: /\A[a-zA-Z0-9]+\z/,
                       message: "only allows letters and numbers, no special characters" }

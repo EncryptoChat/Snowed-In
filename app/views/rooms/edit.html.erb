@@ -5,13 +5,13 @@
 
   <%= simple_form_for @room, html: { autocomplete: 'off' } do |form| %>
     <%= form.input :name %>
-    <%= form.submit "Update Channel", class: 'btn btn-success' %>
+    <%= form.submit "Update Room", class: 'btn btn-success' %>
 
     <%= link_to @room,
                 method: :delete,
                 data: { confirm: 'Are you sure?' },
                 class: 'btn btn-danger' do %>
-      Destroy Channel
+      Destroy Room
     <%end%>
   <% end %>
 </div>
