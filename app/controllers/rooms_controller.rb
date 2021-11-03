@@ -32,11 +32,19 @@ class RoomsController < ApplicationController
   end
 
   def update
-    if @room.update_attributes(permitted_parameters)
+    if @room.update(permitted_parameters)
       flash[:success] = "Room #{@room.name} was updated successfully"
       redirect_to rooms_path
     else
       render :new
+    end
+  end
+
+  def destroy
+    @room.destroy
+    respond_to do |format|
+      format.html { redirect_to rooms_url, notice: "Room was successfully destroyed." }
+      format.json { head :no_content }
     end
   end
 

@@ -1,9 +1,10 @@
-<h1>
-  Creating a room
-</h1>
+<div class = "container my-4">
+  <h1>Creating a room</h1>
 
-<%= render partial: 'form' %>
+  <%= simple_form_for @room, html: { autocomplete: 'off' } do |form| %>
+    <%= form.input :name,
+                   html: { autocomplete: 'off' } %>
 
-<%= link_to rooms_url, class: "btn btn-primary" do %>
-  Home
-<% end %>
+    <%= form.submit "Save Room", class: 'btn btn-success' %>
+  <% end %>
+</div>

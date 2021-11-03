@@ -1,5 +1,17 @@
-<h1>
-  Editing room <%= @room.name %>
-</h1>
+<div class = "container my-4">
+  <h1>
+    Editing room <%= @room.name %>
+  </h1>
 
-<%= render partial: 'form' %>
+  <%= simple_form_for @room, html: { autocomplete: 'off' } do |form| %>
+    <%= form.input :name %>
+    <%= form.submit "Update Room", class: 'btn btn-success' %>
+
+    <%= link_to @room,
+                method: :delete,
+                data: { confirm: 'Are you sure?' },
+                class: 'btn btn-danger' do %>
+      Destroy Room
+    <%end%>
+  <% end %>
+</div>

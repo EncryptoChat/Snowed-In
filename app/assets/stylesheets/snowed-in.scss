@@ -7,35 +7,46 @@
   }
 }
 
+.flex-column{
+  border: 2px solid lightskyblue;
+  background: whitesmoke;
+  height: 60vh;
+  border-radius: 5px 5px 0 0;
+  overflow: auto;
+}
+
 .chat {
   border: 1px solid lightskyblue;
   background: whitesmoke;
-  height: 75vh;
-  border-radius: 5px 5px 0 0;
+  height: 60vh;
   overflow-y: auto;
 }
 
 .chat-input {
   border-top: 0 none;
   border-radius: 0 0 5px 5px;
+  height: auto;
 }
 
 .chat-message-container {
-  padding: 5px;
-
-  .avatar {
-    margin: 5px;
-  }
+  padding: 15px;
 
   .message-content {
     padding: 5px;
     border: 1px solid black;
     border-radius: 5px;
-    background: #b8f3ff;
+    background: lightskyblue;
     color: black;
   }
 
   & + .chat-message-container {
     margin-top: 10px;
   }
+}
+
+.body{
+  padding-left: 10vh;
+  padding-right: 10vh;
+  padding-bottom: 6vh;
+  height: 78vh;
 }
