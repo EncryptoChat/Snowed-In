@@ -4,3 +4,5 @@
 import { createConsumer } from "@rails/actioncable"
 
 export default createConsumer()
+
+//consumer.subscriptions.create({ channel: "RoomChannel", room: "My Room" })

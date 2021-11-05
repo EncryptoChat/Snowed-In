@@ -5,6 +5,9 @@ class RoomMessagesController < ApplicationController
     @room_message = RoomMessage.create user: current_user,
                                        room: @room,
                                        message: params.dig(:room_message, :message)
+    
+    SendMessageJob.perform_later(@room_message)
+    
   end
 
   protected
