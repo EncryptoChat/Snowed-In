@@ -44,7 +44,7 @@ uses MVC was just a nice treat.
 
 Dependency   | Version      |Installation
 ------------ | -------------|-----------
-Ruby         | 2.7.4        |[📥 Download](https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.4.zip)
+Ruby         | 2.7.4        |[📥 Download](https://rubyinstaller.org/downloads/)
 Rails        | 6.1.4.1      |[Step 1](https://github.com/EncryptoChat/Snowed-In-V1.2/tree/Development#1-installing-ruby-and-rails)
 Node         | 14.17.6      |[Step 3](https://github.com/EncryptoChat/Snowed-In-V1.2/tree/Development#3-installing-nodejs)
 
@@ -58,7 +58,7 @@ version is correct this can be checked using the command on the command line or 
 
 After installing ruby use the command line or power shell to run:
 
-    ruby install rails -v 6.1.4.1
+    gem install rails -v 6.1.4.1
 #### 2. Downloading appropriate libraries:
 As long as correct versions of Ruby and Rails are installed. You should be able to use the bundler to install all the
 required gems. To do so, use the command line to navigate to the project directory and then run the command:
