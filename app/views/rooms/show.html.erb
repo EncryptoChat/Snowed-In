@@ -1,7 +1,3 @@
-<h1><%= @room.name %></h1>
-
-<br>
-
 <div class="row">
   <div class="col-12 col-md-3">
     <div class="mb-3">
@@ -16,30 +12,13 @@
   </div>
 
   <div class="col">
+    <h1><%= @room.name %></h1>
     <div class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>">
-      <% @room_messages.each do |room_message| %>
-        <div class="chat-message-container">
-          <div class="row px-1">
-            <div class="col-1 text-left">
-              <%= room_message.user.username %>:
-            </div>
-
-            <div class="col">
-              <div class="message-content">
-                <p class="mb-1">
-                  <%= room_message.message %>
-                </p>
-
-                <div class="text-right">
-                  <small>
-                    <%= room_message.created_at %>
-                  </small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <div id="room_messages">
+        <% @room_messages.each do |room_message| %>
+          <%= render partial:'rooms/message', locals: {room_message: room_message, room: @room} %>
+        <% end %>
+      </div>
     </div>
 
     <%= simple_form_for @room_message, html: { autocomplete: 'off' }, remote: true do |form| %>
@@ -59,23 +38,22 @@
   </div>
   
   <div class="d-none" data-role="message-template">
-  <div class="chat-message-container">
-    <div class="row no-gutters">
-      <div class="col-auto text-center">
-        <img src="" class="avatar" alt="" data-role="user-avatar">
-      </div>
+    <div class="chat-message-container">
+      <div class="row no-gutters">
+        <div class="col-auto text-center">
+          <img src="" class="avatar" alt="" data-role="user-avatar">
+        </div>
 
-      <div class="col">
-        <div class="message-content">
-          <p class="mb-1" data-role="message-text"></p>
+        <div class="col">
+          <div class="message-content">
+            <p class="mb-1" data-role="message-text"></p>
 
-          <div class="text-right">
-            <small data-role="message-date"></small>
+            <div class="text-right">
+              <small data-role="message-date"></small>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
 </div>

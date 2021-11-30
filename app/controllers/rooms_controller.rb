@@ -58,4 +58,5 @@ class RoomsController < ApplicationController
   def permitted_parameters
     params.require(:room).permit(:name)
   end
+
 end
