@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  Test_and_build:
+  Build_and_test:
     runs-on: windows-latest
     strategy:
       matrix:
@@ -23,7 +23,7 @@ jobs:
 
     - name: Compile webpacker
       run: |
-        bundle exec rails webpacker:compile
+        bundle exec rails yarn:install
 
     - name: Run tests
       env:
