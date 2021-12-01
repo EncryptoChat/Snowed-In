@@ -26,6 +26,6 @@ jobs:
       env:
         RAILS_ENV: test
       run: |
-        bundle exec rails webpacker:install
+        bundle exec rails webpacker:compile
         bundle exec rake db:migrate
         bundle exec rake
