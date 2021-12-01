@@ -2,7 +2,7 @@ name: Ruby Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, test ]
   pull_request:
     branches: [ main ]
 
@@ -26,5 +26,6 @@ jobs:
       env:
         RAILS_ENV: test
       run: |
+        bundle exec rails webpacker:install
         bundle exec rake db:migrate
         bundle exec rake
