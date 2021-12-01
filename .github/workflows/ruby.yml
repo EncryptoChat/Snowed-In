@@ -2,17 +2,16 @@ name: Ruby Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, test ]
   pull_request:
     branches: [ main ]
 
 jobs:
-  test:
-
+  Build_and_test:
     runs-on: windows-latest
     strategy:
       matrix:
-        ruby-version: ['2.7']
+        ruby-version: ['2.7.4']
 
     steps:
     - uses: actions/checkout@v2
@@ -21,6 +20,10 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true
+
+    - name: Compile webpacker
+      run: |
+        bundle exec rails yarn:install
 
     - name: Run tests
       env:
