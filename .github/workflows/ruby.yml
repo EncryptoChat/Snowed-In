@@ -7,8 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
-
+  Test_and_build:
     runs-on: windows-latest
     strategy:
       matrix:
@@ -22,10 +21,13 @@ jobs:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true
 
+    - name: Compile webpacker
+      run: |
+        bundle exec rails webpacker:compile
+
     - name: Run tests
       env:
         RAILS_ENV: test
       run: |
-        bundle exec rake webpacker:compile
         bundle exec rake db:migrate
         bundle exec rake
