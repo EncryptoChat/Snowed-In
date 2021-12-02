@@ -6,6 +6,8 @@ class RoomMessagesController < ApplicationController
     @room_message.user = current_user
     @room_message.room = @room
     @room_message.save
+
+    @room_messages = @room.room_messages
     
     puts "********RoomMessagesController**********"
     puts @room_message
@@ -18,12 +20,21 @@ class RoomMessagesController < ApplicationController
     puts @room_message.room_id
     puts @room_message.user
     puts @room_message.user.username
+    puts @room_messages
+    puts @room.room_messages
 
-    #sender = ApplicationController.render(
-     # 'rooms/show',
-      #locals: :room_message @room_message, :room @room 
-    #)
+    html = render 'rooms/show', 
+      locals: {
+        @room => :room, @room_message => :room_message, @room_messages => :room_messages
+      }
     
+    puts "**********AfterRender*****************"
+    puts html
+    #puts html.room_message
+    puts " **********DONE***************"
+
+    ActionCable.server.broadcast("room_channel_#{@room_message.room_id}", html: html)
+
     #SendMessageJob.perform_later(@room_message)
     
   end

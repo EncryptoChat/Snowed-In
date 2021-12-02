@@ -9,12 +9,14 @@ class SendMessageJob < ApplicationJob
     puts room_message.room
     puts room_message.room.name
     puts room_message.room.id
+    puts room_message.user.username
 
 
-    sender = ApplicationController.render(
-      'rooms/show',
-      locals: {room_message: @room_message, room_id: @room_message.room.id} 
-    )
+    #ApplicationController.render 'rooms/show', 
+    #locals: {
+      #@room => :room, @room_message => :room_message, @room_messages => :room_messages
+    #}
+
 
     #reciever = ApplicationController.render(
     #  'rooms/message',
