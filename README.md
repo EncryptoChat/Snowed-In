@@ -9,6 +9,7 @@ Name              | Role(s)                  | Username(GitHub)
 TJ Virbick        | Product Owner, Developer | TjVirb
 Connor Drummond   | Scrum Master, Developer  | cdrummo
 
+![Buils and test](https://https://github.com/EncryptoChat/Snowed-In/actions/workflows/ruby.yml/badge.svg)
 
 ### 💭 The Idea Behind the Project:
 
