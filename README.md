@@ -1,4 +1,4 @@
-# ❄❄❄Snowed-In: Encrypted Chat Channels❄❄❄
+# ❄❄Snowed-In: Encrypted Chat Channels❄❄
 
 
 ![Ruby_Pipeline](https://github.com/EncryptoChat/Snowed-In/actions/workflows/ruby.yml/badge.svg)  
