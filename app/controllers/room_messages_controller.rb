@@ -10,29 +10,17 @@ class RoomMessagesController < ApplicationController
     @room_messages = @room.room_messages
     
     puts "********RoomMessagesController**********"
-    puts @room_message
-    puts @room_message.message
-    puts @room_message.room
-    puts @room
-    puts @room.name
-    puts @room_message.room.name
-    puts @room.id
-    puts @room_message.room_id
-    puts @room_message.user
-    puts @room_message.user.username
-    puts @room_messages
-    puts @room.room_messages
 
-    html = render 'rooms/show', 
-      locals: {
-        @room => :room, @room_message => :room_message, @room_messages => :room_messages
-      }
+    html = render partial: 'rooms/room_message', collection: @room_messages, @room_message => :room_message
+      #locals: {
+       # @room_message => :room_message
+      #}
     
     puts "**********AfterRender*****************"
-    puts html
+    #puts html
     #puts html.room_message
-    puts " **********DONE***************"
-
+    
+    puts " **********BROADCASTING***************"
     ActionCable.server.broadcast("room_channel_#{@room_message.room_id}", html: html)
 
     #SendMessageJob.perform_later(@room_message)
@@ -46,7 +34,7 @@ class RoomMessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:room_message).permit(:message, :user, :room)
+    params.require(:room_message).permit(:message, :user, :room, :room_id)
   end
 
 end

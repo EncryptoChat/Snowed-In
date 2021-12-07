@@ -13,8 +13,8 @@ consumer.subscriptions.create({ channel: "RoomChannel", room_id: 1 }, {
   received(data) {
     console.log("Recieved...")
     console.log(data.html)
-    const messageContainer = document.getElementById('site')
-    messageContainer.innerHTML = messageContainer.innerHTML + data.html
+    const messageContainer = document.getElementById('room_messages')
+    messageContainer.innerHTML = data.html
 
   }
 

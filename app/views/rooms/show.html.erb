@@ -1,85 +1,55 @@
-<div id = "site">
-  <%= puts "**************TEST***************" %>
-  <div class="row">
-    <div class="col-12 col-md-3">
-      <div class="mb-3">
-        <%= link_to new_room_path, class: 'btn btn-success' do %>
-          Create a room
-        <%end%>
-        <%= puts "**************SHOW***************" %>
-        <%= puts @room %>
-        <%= link_to edit_room_path(@room), class: 'btn btn-warning' do %>
-          Edit Room
-        <% end %>
-      </div>
-      <%= render partial: 'rooms/rooms' %>
-    </div>
-
-    <div class="col">
-      <%= puts "**************SHOW**************" %>
-      <%= puts @room.name %>
-      <%= puts @room.id %>
-      <h1><%= @room.name %></h1>
-      <div class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>">
-        <div id="room_messages">
-          <%= puts "**************MESSAGES**************" %>
-          <%= puts @room_messages %>
-          <% @room_messages.each do |room_message| %>
-            <div class="chat-message-container">
-              <div class="row px-1">
-                <div class="col-3 text-left">
-                  <%= room_message.user.username %>:
-                </div>
-
-                <div class="col">
-                  <div class="message-content">
-                    <p class="mb-1">
-                      <%= room_message.message %>
-                    </p>
-
-                    <div class="text-right">
-                      <small>
-                        <%= room_message.created_at %>
-                      </small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
-      <%= simple_form_for @room_message, html: { autocomplete: 'off' }, remote: true do |form| %>
-        <div class="input-group mb-3">
-          <%= form.input :message, as: :text,
-                         wrapper: false,
-                         label: false,
-                         autofocus: true,
-                         input_html: { class: 'chat-input' } %>
-          <div class="input-group-append">
-            <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
-          </div>
-        </div>
-
-        <%= form.input :room_id, as: :hidden %>
+<%= puts "**************SHOW***************" %>
+<div class="row">
+  <div class="col-12 col-md-3">
+    <div class="mb-3">
+      <%= link_to new_room_path, class: 'btn btn-success' do %>
+        Create a room
+      <%end%>
+      <%= link_to edit_room_path(@room), class: 'btn btn-warning' do %>
+        Edit Room
       <% end %>
     </div>
+    <%= render partial: 'rooms/rooms' %>
+  </div>
+
+  <div class="col">
+    <h1><%= @room.name %></h1>
+    <div class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>">
+      <div id="room_messages">
+        <%= puts "**************MESSAGES**************" %>
+        <%= render partial: 'room_message', collection: @room_messages, @room_message => :room_message %>
+      </div>
+    </div>
+
+    <%= simple_form_for @room_message, html: { autocomplete: 'off' }, remote: true do |form| %>
+      <div class="input-group mb-3">
+        <%= form.input :message, as: :text,
+                        wrapper: false,
+                        label: false,
+                        autofocus: true,
+                        input_html: { class: 'chat-input' } %>
+        <div class="input-group-append">
+          <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+        </div>
+      </div>
+
+      <%= form.input :room_id, as: :hidden %>
+    <% end %>
+  </div>
     
-    <div class="d-none" data-role="message-template">
-      <div class="chat-message-container">
-        <div class="row no-gutters">
-          <div class="col-auto text-center">
-            <img src="" class="avatar" alt="" data-role="user-avatar">
-          </div>
+  <div class="d-none" data-role="message-template">
+    <div class="chat-message-container">
+      <div class="row no-gutters">
+        <div class="col-auto text-center">
+          <img src="" class="avatar" alt="" data-role="user-avatar">
+        </div>
 
-          <div class="col">
-            <div class="message-content">
-              <p class="mb-1" data-role="message-text"></p>
+        <div class="col">
+          <div class="message-content">
+            <p class="mb-1" data-role="message-text"></p>
 
-              <div class="text-right">
-                <small data-role="message-date"></small>
-              </div>
+            <div class="text-right">
+              <small data-role="message-date"></small>
             </div>
           </div>
         </div>
