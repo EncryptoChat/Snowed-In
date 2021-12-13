@@ -1,4 +1,8 @@
-# ❄❄❄Snowed-In: Encrypted Chat Channels❄❄❄
+# ❄❄Snowed-In: Encrypted Chat Channels❄❄
+
+
+![Ruby_Pipeline](https://github.com/EncryptoChat/Snowed-In/actions/workflows/ruby.yml/badge.svg)  
+
 
 ## 📖      About Snowed-In:
 
@@ -8,7 +12,6 @@ Name              | Role(s)                  | Username(GitHub)
 ----------------- |--------------------------|------------------
 TJ Virbick        | Product Owner, Developer | TjVirb
 Connor Drummond   | Scrum Master, Developer  | cdrummo
-
 
 ### 💭 The Idea Behind the Project:
 
