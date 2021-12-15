@@ -22,14 +22,15 @@
     </div>
 
     <%= simple_form_for @room_message, html: { autocomplete: 'off' }, remote: true do |form| %>
-      <div class="input-group mb-3">
-        <%= form.input :message, as: :text,
+      <div class="input-group mb-3" >
+        <%= form.input :message, as: :string,
                         wrapper: false,
                         label: false,
                         autofocus: true,
                         input_html: { class: 'chat-input' } %>
         <div class="input-group-append">
-          <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+          <%= form.submit "Send", class: 'btn btn-primary chat-input', type: "submit" %>
+
         </div>
       </div>
 
@@ -41,13 +42,10 @@
     <div class="chat-message-container">
       <div class="row no-gutters">
         <div class="col-auto text-center">
-          <img src="" class="avatar" alt="" data-role="user-avatar">
         </div>
-
         <div class="col">
           <div class="message-content">
             <p class="mb-1" data-role="message-text"></p>
-
             <div class="text-right">
               <small data-role="message-date"></small>
             </div>
