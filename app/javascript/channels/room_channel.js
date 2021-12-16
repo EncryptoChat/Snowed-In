@@ -1,3 +1,5 @@
+//Subscription Consumer//
+//Following a tutorial https://www.youtube.com/watch?v=s3CmHhDjuWc//
 import consumer from "./consumer"
 
 var token = document.getElementsByName('csrf-token')[0].content

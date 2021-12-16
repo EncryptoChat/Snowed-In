@@ -1,3 +1,4 @@
+#Controller for all messages
 class RoomMessagesController < ApplicationController
   before_action :load_entities
 
