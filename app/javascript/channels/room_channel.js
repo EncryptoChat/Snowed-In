@@ -1,16 +1,21 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create({ channel: "RoomChannel", room_id: 1 }, {
-  connected(){
-    console.log("Connected to room 1")
-  },
+var token = document.getElementsByName('csrf-token')[0].content
 
-  disconnected() {
-  },
-  received(data) {
-    console.log("Recieved...")
-    console.log(data.html)
-    const messageContainer = document.getElementById('room_messages')
-    messageContainer.innerHTML = data.html
-  }
-});
+document.addEventListener('turbolinks:load', () => {
+  const room_element = document.getElementById('room_id');
+  const room_id = room_element.getAttribute('data-room-id');
+
+  consumer.subscriptions.create({ channel: "RoomChannel", room_id: room_id }, {
+    connected(){
+      console.log("Connected to room " + room_id)
+    },
+
+    disconnected() {
+    },
+    received(data) {
+      const messageContainer = document.getElementById('room_messages')
+      messageContainer.innerHTML = data.html
+    }
+  });
+})

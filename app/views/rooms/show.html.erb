@@ -1,4 +1,7 @@
-<%= puts "**************SHOW***************" %>
+<div id="room_id" data-room-id="<%=@room.try(:id)%>"></div>
+<%= puts "****room_id****"%>
+<%= puts @room.try(:id)%>
+
 <div class="row">
   <div class="col-12 col-md-3">
     <div class="mb-3">
@@ -16,7 +19,6 @@
     <h1><%= @room.name %></h1>
     <div class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>">
       <div id="room_messages">
-        <%= puts "**************MESSAGES**************" %>
         <%= render partial: 'room_message', collection: @room_messages, @room_message => :room_message %>
       </div>
     </div>
