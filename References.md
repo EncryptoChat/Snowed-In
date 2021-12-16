@@ -2,7 +2,7 @@
 
 ## Bootstrap:
 
-### navigation Bar:
+### Navigation Bar:
 https://getbootstrap.com/docs/4.0/components/navbar/
 
 ### Footer:
@@ -25,7 +25,8 @@ https://www.freecodecamp.org/news/how-does-devise-keep-your-passwords-safe-d367f
 https://stackify.com/how-to-do-authentication-right-with-rails-devise/  
 https://guides.railsgirls.com/devise  
 https://johnofsydney.github.io/notes/rails/rails_new_project_with_devise.html#adding-the-name-field-to-user
-## Encryption
+
+## Encryption:
 
 https://hackernoon.com/creating-end-to-end-encryption-in-rails-with-stimulus-and-openpgpjs-elg3u31
 
