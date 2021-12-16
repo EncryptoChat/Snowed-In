@@ -6,6 +6,10 @@ document.addEventListener('turbolinks:load', () => {
   const room_element = document.getElementById('room_id');
   const room_id = room_element.getAttribute('data-room-id');
 
+  consumer.subscriptions.subscriptions.forEach((subscription) => {
+    consumer.subscriptions.remove(subscription)
+  })
+
   consumer.subscriptions.create({ channel: "RoomChannel", room_id: room_id }, {
     connected(){
       console.log("Connected to room " + room_id)
