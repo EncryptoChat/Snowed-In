@@ -1,6 +1,6 @@
-<h1><%= @room.name %></h1>
-
-<br>
+<div id="room_id" data-room-id="<%=@room.try(:id)%>"></div>
+<%= puts "****room_id****"%>
+<%= puts @room.try(:id)%>
 
 <div class="row">
   <div class="col-12 col-md-3">
@@ -12,49 +12,48 @@
         Edit Room
       <% end %>
     </div>
-    <%= render partial: 'rooms' %>
+    <%= render partial: 'rooms/rooms' %>
   </div>
 
   <div class="col">
-    <div class="chat">
-      <% @room_messages.each do |room_message| %>
-        <div class="chat-message-container">
-          <div class="row px-1">
-            <div class="col-1 text-left">
-              <%= room_message.user.username %>:
-            </div>
-
-            <div class="col">
-              <div class="message-content">
-                <p class="mb-1">
-                  <%= room_message.message %>
-                </p>
-
-                <div class="text-right">
-                  <small>
-                    <%= room_message.created_at %>
-                  </small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
+    <h1><%= @room.name %></h1>
+    <div class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>">
+      <div id="room_messages">
+        <%= render partial: 'room_message', collection: @room_messages, @room_message => :room_message %>
+      </div>
     </div>
 
     <%= simple_form_for @room_message, html: { autocomplete: 'off' }, remote: true do |form| %>
-      <div class="input-group mb-3">
-        <%= form.input :message, as: :text,
-                       wrapper: false,
-                       label: false,
-                       autofocus: true,
-                       input_html: { class: 'chat-input' } %>
+      <div class="input-group mb-3" >
+        <%= form.input :message, as: :string,
+                        wrapper: false,
+                        label: false,
+                        autofocus: true,
+                        input_html: { class: 'chat-input' } %>
         <div class="input-group-append">
-          <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+          <%= form.submit "Send", class: 'btn btn-primary chat-input', type: "submit" %>
+
         </div>
       </div>
 
       <%= form.input :room_id, as: :hidden %>
     <% end %>
+  </div>
+    
+  <div class="d-none" data-role="message-template">
+    <div class="chat-message-container">
+      <div class="row no-gutters">
+        <div class="col-auto text-center">
+        </div>
+        <div class="col">
+          <div class="message-content">
+            <p class="mb-1" data-role="message-text"></p>
+            <div class="text-right">
+              <small data-role="message-date"></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

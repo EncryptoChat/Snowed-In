@@ -1,0 +1,23 @@
+<div id="room_id" data-room-id="<%=@room.try(:id)%>"></div>
+<%= puts "Rending room_message" %>
+<div class="chat-message-container">
+  <div class="row px-1">
+    <div class="col-3 text-left">
+      <%= room_message.user.username %>:
+    </div>
+
+    <div class="col">
+      <div class="message-content">
+        <p class="mb-1">
+          <%= room_message.message %>
+        </p>
+
+        <div class="text-right">
+          <small>
+            <%= room_message.created_at %>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
