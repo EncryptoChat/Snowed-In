@@ -25,13 +25,3 @@ https://www.freecodecamp.org/news/how-does-devise-keep-your-passwords-safe-d367f
 https://stackify.com/how-to-do-authentication-right-with-rails-devise/  
 https://guides.railsgirls.com/devise  
 https://johnofsydney.github.io/notes/rails/rails_new_project_with_devise.html#adding-the-name-field-to-user
-
-## Encryption:
-
-https://hackernoon.com/creating-end-to-end-encryption-in-rails-with-stimulus-and-openpgpjs-elg3u31
-
-## Rails Chat App References:
-
-https://www.juanjosefernandez.com/code/2020/12/10/chatroom-on-rails.html  
-https://dev.to/nkemjiks/simple-chatroom-with-rails-6-and-actioncable-3bc3  
-https://www.twilio.com/blog/build-chat-ruby-on-rails-applications  
